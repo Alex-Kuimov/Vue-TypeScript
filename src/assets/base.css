@@ -1,0 +1,21 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-main: #253334;
+  --color-second: #7C9A92;
+  --font-alegreya: "Alegreya", serif;
+  --font-alegreya-sans: "Alegreya Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-alegreya);
+}
