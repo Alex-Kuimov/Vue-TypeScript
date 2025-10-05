@@ -1,20 +1,13 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useMeditationStore } from './stores/meditation.store.ts';
-import CardList from './components/CardList.vue';
-
-const meditations = useMeditationStore();
-
-onMounted(async () => {
-  await meditations.fetchData();
-});
+import HeaderWidget from './widgets/HeaderWidget.vue';
 </script>
 
 <template>
   <header>
+    <HeaderWidget />
   </header>
   <main>
-    <CardList />
+    <RouterView></RouterView>
   </main>
 </template>
 
