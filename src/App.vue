@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import { useMeditationStore } from './stores/meditation.store.ts';
 import type { Meditation } from './interfaces/meditation.interface.ts';
 import { api, API_ENDPOINTS } from './api.ts';
+import CardList from './components/CardList.vue';
 
 const meditations = useMeditationStore();
 
@@ -10,8 +11,9 @@ const fetchMeditations = async () => {
   meditations.isLoading = true;
 
   try {
-    const { data } = await api.get<Meditation[]>(API_ENDPOINTS.MEDITATIONS);
-    meditations.data = data;
+    const { data } = await api.get<{ meditations: Meditation[] }>(API_ENDPOINTS.MEDITATIONS);
+    meditations.data = data.meditations;
+
   } catch (error) {
     console.error('Error fetching meditations:', error);
   } finally {
@@ -19,9 +21,8 @@ const fetchMeditations = async () => {
   }
 };
 
-
-onMounted(() => {
-  fetchMeditations();
+onMounted(async () => {
+  await fetchMeditations();
 });
 
 </script>
@@ -29,10 +30,8 @@ onMounted(() => {
 <template>
   <header>
   </header>
-
   <main>
-
-
+    <CardList />
   </main>
 </template>
 
