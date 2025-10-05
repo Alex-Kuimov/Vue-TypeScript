@@ -4,8 +4,8 @@ import type { Meditation } from '../interfaces/meditation.interface.ts';
 
 
 export const useMeditationStore = defineStore('meditation', () => {
-    const meditations = ref<Meditation[]>([]);
+    const data = ref<Meditation[]>([]);
     const isLoading = ref<boolean>(false);
 
-    return { meditations, isLoading };
+    return { data, isLoading };
 });
