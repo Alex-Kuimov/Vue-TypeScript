@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <p>Статитика</p>
+    <p>Статистика</p>
 </template>
 
 <style scoped></style>
