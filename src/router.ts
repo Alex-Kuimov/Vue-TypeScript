@@ -10,6 +10,16 @@ const routes = [
     path: '/stat',
     name: 'stat',
     component: () => import('./pages/StatPage.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('./pages/RegistrationPage.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('./pages/LoginPage.vue')
   }
 ];
 
